@@ -5,6 +5,6 @@ export async function testTrigger(myTimer: Timer, context: InvocationContext): P
 }
 
 app.timer('testTrigger', {
-    schedule: '0 */5 * * * *',
+    schedule: '*/5 * * * * *',
     handler: testTrigger
 });

@@ -13,7 +13,7 @@ env:
 jobs:
   build-and-deploy:
     if: (github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main') || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest 
+    runs-on: windows-latest 
     environment: staging
     steps:
     - name: 'Checkout GitHub Action'
@@ -25,7 +25,7 @@ jobs:
         node-version: ${{ env.NODE_VERSION }}
 
     - name: 'Resolve Project Dependencies Using Yarn'
-      shell: bash
+      shell: pwsh
       run: |
         pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
         yarn install

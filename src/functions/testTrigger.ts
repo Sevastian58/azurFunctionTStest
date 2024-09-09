@@ -21,6 +21,6 @@ export async function testTrigger(
 }
 
 app.timer("testTrigger", {
-  schedule: "0 0 17 * * *",
+  schedule: "0 0 18 * * *",
   handler: testTrigger,
 });
